@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+   
+}
+
+
+#cur {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    z-index: 99;
+    position: fixed;
+    border-radius: 50%;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+#cur-blur {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 0, 0, 0.295);
+
+    position: fixed;
+    filter: blur(60px);
+    border-radius: 50%;
+}
+
+#nav {
+    width: 100%;
+    display: flex;
+    z-index: 99;
+    height: 60px;
+   background-color: rgba(0, 0, 0, 0.5);
+   border-bottom: 0.5px solid gray;
+    align-items: center;
+    position: fixed;
+   
+    padding: 0vh 2vw;
+    text-transform: uppercase;
+    justify-content: flex-start;
+    gap: 40px;
+}
+#nav h4{
+   cursor: pointer;
+}
+#nav img {
+    width: 100px;
+}
+
+video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    object-fit: cover;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+    /* z-index: 9; */
+    background-color: rgba(0, 0, 0, .50);
+}
+
+#page1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 9;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#page1 h1 {
+    font-size: 110px;
+    font-weight: 999;
+    position: relative;
+    color: rgba(255, 255, 255, 0.959);
+}
+#page1 h1 img{
+  width: 99px;
+}
+#page1 h1::before {
+    content: "EAT. SLEEP. CODE.";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    color: black;
+    z-index: -1;
+    -webkit-text-stroke: 2.1px rgb(0, 255, 0);
+}
+
+#page1 h2 {
+    margin: 2vh 0vw;
+    font-size: 30px;
+    font-weight: 599;
+
+}
+
+#page1 p {
+    font-size: 18px;
+    width: 70vw;
+}
+
+#page2 {
+
+    width: 100%;
+    height: 100vh;
+}
+
+#scroller {
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller-in {
+    margin-top: 250px;
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 20px;
+    transition: all linear 0.3s;
+    color: #000;
+    -webkit-text-stroke: 2px #c41717;
+}
+
+#scroller h4:hover {
+    color: #fa7000;
+    -webkit-text-stroke: 2px #c41717;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+#about-us {
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    justify-content: space-around;
+  }
+  #about-us img {
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  #about-us-in {
+    width: 50%;
+    text-align: center;
+  }
+  #about-us-in h3 {
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+  #about-us-in p {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #cards-container {
+    margin-top: 70px;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+  }
+  .card {
+    height: 80%;
+    width: 24%;
+    /* background-color: blue; */
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+  }
+  #card1 {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/898/294/539/call-of-duty-call-of-duty-modern-warfare-2-illustration-digital-art-4k-hd-wallpaper-preview.jpg);
+  }
+  #card2 {
+    background-image: url(https://wallpapers.com/images/featured/4k-call-of-duty-pmk61whx1j7kjhve.jpg);
+  }
+  #card3 {
+    background-image: url(https://rare-gallery.com/thumbnail/396507-wallpaper-stitch-cod-black-ops-cold-war-4k-hd.jpg);
+  }
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #7400008a;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+  }
+  .overlay h4 {
+    color: #000;
+    font-size: 30px;
+    
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  .overlay p {
+    color: #000;
+    font-size: 18px;
+  }
+  .card:hover .overlay {
+    opacity: 1;
+  }
+  .card:hover {
+    transform: rotate3d(-1, 1, 0, 20deg);
+  }
+  
+  #green-div {
+    height: 40vh;
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    background: linear-gradient(to left bottom, #ff2600d2, #500000);
+  }
+  #green-div h4 {
+    width: 45%;
+    line-height: 50px;
+    color: #eb8500;
+    text-align: center;
+    font-weight: 999;
+    font-size: 27px;
+    text-transform: uppercase;
+  }
+  #green-div img {
+    height: 100%;
+    object-fit: cover;
+    width: 27%;
+  }
+  
+  #page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+  }
+  #page3 > p {
+    font-size: 35px;
+    font-weight: 700;
+    width: 60%;
+    line-height: 45px;
+    text-align: center;
+  }
+  
+  #page3 img {
+    position: absolute;
+    height: 60px;
+  }
+  #page3 #colon1 {
+    left: 15%;
+    top: 25%;
+  }
+  #page3 #colon2 {
+    bottom: 30%;
+    right: 15%;
+  }
+  #page4 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+  }
+  .elem {
+    height: 70%;
+    width: 26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .elem h2 {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    display: flex;
+    color: #000;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.5s;
+    font-size: 2vw;
+    position: absolute;
+    z-index: 10;
+  }
+  .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
+  }
+  .elem:hover h2 {
+    color: #fff;
+    background-color: transparent;
+  }
+  .elem:hover img {
+    scale: 1;
+  }
+  
+  #footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #b41b06 0%, #5fa351 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 100px;
+  }
+  #footer > img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+  #f1 img {
+    height: 80px;
+  }
+  #f1,
+  #f2,
+  #f3,
+  #f4 {
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    /* background-color: red; */
+  }
+  #f2 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  
+  #f3 h3 {
+    font-size: 1.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  #f4 h4 {
+    font-size: 1vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+
+
+  
